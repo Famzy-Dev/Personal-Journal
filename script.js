@@ -14,8 +14,9 @@ function checkPassword() {
 
   if (user) {
     document.getElementById('welcome-msg').innerText = `Welcome, ${capitalize(user)}!`;
-    loginContainer.style.display = 'none';
-    dashboard.style.display = 'block';
+    loginContainer.classList.add('hidden');
+    dashboard.classList.remove('hidden');
+    dashboard.classList.add('flex');
   } else {
     errorElem.innerText = 'Wrong password dumbass.';
   }
@@ -24,4 +25,3 @@ function checkPassword() {
 function capitalize(s) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
-
